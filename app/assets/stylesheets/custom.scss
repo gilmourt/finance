@@ -10,6 +10,7 @@ body {
   center image{
       text-align: center;
   }
+
   
   section {
     overflow: auto;
@@ -68,4 +69,12 @@ h1, h2, h3, h4, h5, h6 {
   #logo:hover {
     color: lightblue;
     text-decoration: none;
+  }
+
+  .green {
+    color: green
+  }
+
+  .red {
+    color: red
   }
