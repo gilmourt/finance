@@ -21,7 +21,7 @@
                     <% if stockdata.latest_price-stockdata.previous_close>0 %>
                      <td class="green"><%="+"+(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td> 
                     <%else%>
-                     <td class="red"><%="-"+(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td>
+                     <td class="red"><%=(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td>
                     <%end%>
                 </tr>
             <% end %>
