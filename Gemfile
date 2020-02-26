@@ -14,6 +14,10 @@ gem 'jbuilder',     '2.7.0'
 gem 'chartkick'
 gem 'stock_quote'
 
+#gem for testing website interaction
+gem 'selenium'
+gem 'minitest-rails-capybara'
+
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri

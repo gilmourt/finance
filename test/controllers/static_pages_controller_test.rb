@@ -12,6 +12,11 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Home | #{@base_title}"
   end
 
+  test "Creates stocks array" do
+    get static_pages_home_url
+    assigns(:stocks)
+  end
+
   test "should get help" do
     get static_pages_help_url
     assert_response :success
