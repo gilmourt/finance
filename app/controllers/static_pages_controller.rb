@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @stocks = ["AAPL","GOOG","AMZN","TSLA","NFLX"]
+    @stocks = Stock.all
   end
 
   def help

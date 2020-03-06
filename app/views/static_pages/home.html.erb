@@ -1,33 +1,8 @@
 <% provide(:title, "Home") %>
 <h1>Finance Info</h1>
 <div class="center jumbotron">
-   
-    <table class="table table-striped table-hover table-condensed table-bordered">
-        <thead>
-            <tr>
-                <th scope="col">Company</th>
-                <th scope="col">Prev. Close</th>
-                <th scope="col">Current Price</th>
-                <th scope="col">Change</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @stocks.each do |stock| %>
-                <% stockdata = StockQuote::Stock.quote(stock)%>
-                <tr>
-                    <th scope="row"><%= stock %></th>
-                    <td><%= stockdata.previous_close %></td>
-                    <td><%= stockdata.latest_price %></td>
-                    <% if stockdata.latest_price-stockdata.previous_close>0 %>
-                     <td class="green"><%="+"+(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td> 
-                    <%else%>
-                     <td class="red"><%=(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td>
-                    <%end%>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-    <%= button_to "Refresh Portfolio", static_pages_home_path, :method => :get%>
+   <p>This website allows for the curation of a basic stock portfolio that will display current and previous closing prices of user selected stocks.</p>
+   <%= button_to "Enter Portfolio", stocks_path, :method => :get %>
 </div>
 
 

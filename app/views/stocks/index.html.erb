@@ -1,0 +1,44 @@
+<% provide(:title, "Portfolio") %>
+<p id="notice"><%= notice %></p>
+<h1>Your Portfolio</h1>
+<%@stocks.sort_by {|stock| :ticker}%>
+<table class="table table-striped table-hover table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Ticker</th>
+                <th scope="col">Company</th>
+                <th scope="col">Prev. Close</th>
+                <th scope="col">Current Price</th>
+                <th scope="col">Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @stocks.each do |stock| %>
+                <%stock.ticker=stock.ticker.upcase%>
+                <% stockdata = StockQuote::Stock.quote(stock.ticker)%>
+                <tr>
+                    <th scope="row"><%= stock.ticker %></td>
+                    <td><%= stockdata.company_name %></td>
+                    <td><%= stockdata.previous_close %></td>
+                    <td><%= stockdata.latest_price %></td>
+                    <% if stockdata.latest_price-stockdata.previous_close>0 %>
+                     <td class="green"><%="+"+(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td> 
+                    <%else%>
+                     <td class="red"><%=(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td>
+                    <%end%>
+                    <td><%= link_to 'Remove', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+            <% end %>
+            <tr>
+              <td><%= button_to "New Stock", new_stock_path, :method => :get %></td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <%= button_to "Refresh Portfolio", stocks_path, :method => :get%>
+    
