@@ -14,7 +14,6 @@
         </thead>
         <tbody>
             <% @stocks.each do |stock| %>
-                <%stock.ticker=stock.ticker.upcase%>
                 <% stockdata = StockQuote::Stock.quote(stock.ticker)%>
                 <tr>
                     <td scope="row"><%= link_to stock.ticker, stock_path(stock, :get) %> </td>

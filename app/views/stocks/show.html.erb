@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<% @stock.ticker=@stock.ticker.upcase%>
 <% stockdata = StockQuote::Stock.quote(@stock.ticker)%>
 <h2 class="compname"> <%= stockdata.company_name %> </h2>
 <% if stockdata.latest_price-stockdata.previous_close>0 %>

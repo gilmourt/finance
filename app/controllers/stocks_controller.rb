@@ -26,7 +26,7 @@ class StocksController < ApplicationController
   # POST /stocks.json
   def create
     @stock = Stock.new(stock_params)
-
+    @stock.ticker = @stock.ticker.upcase
     respond_to do |format|
       if @stock.save
         format.html { redirect_to @stock, notice: 'Stock was successfully created.' }
