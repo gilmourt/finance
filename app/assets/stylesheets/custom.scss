@@ -72,9 +72,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .green {
-    color: green
+    color: green;
+  }
+  .greenprice {
+    color: green;
+    font-size: 4em;
   }
 
   .red {
-    color: red
+    color: red;
+  }
+  .redprice {
+    color: red;
+    font-size: 4em;
+  }
+
+  .compname {
+   font-size: 5em;
+   margin-bottom: 30px;
+   text-align: center;
   }

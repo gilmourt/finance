@@ -17,7 +17,7 @@
                 <%stock.ticker=stock.ticker.upcase%>
                 <% stockdata = StockQuote::Stock.quote(stock.ticker)%>
                 <tr>
-                    <th scope="row"><%= stock.ticker %></td>
+                    <td scope="row"><%= link_to stock.ticker, stock_path(stock, :get) %> </td>
                     <td><%= stockdata.company_name %></td>
                     <td><%= stockdata.previous_close %></td>
                     <td><%= stockdata.latest_price %></td>
