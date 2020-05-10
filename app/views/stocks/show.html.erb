@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 <% stockdata = StockQuote::Stock.quote(@stock.ticker)%>
+<% pctchange = (100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2)%>
+
 <h2 class="compname"> <%= stockdata.company_name %> </h2>
 <% if stockdata.latest_price-stockdata.previous_close>0 %>
-    <h2 class="greenprice"><%="$"+stockdata.latest_price.to_s%></h2> 
+    <h2 class="greenprice"><%="$"+stockdata.latest_price.to_s+"(+"+pctchange.to_s+"%)"%></h2>
 <%else%>
-    <h2 class="redprice"><%="$"+stockdata.latest_price.to_s%></h2>
+    <h2 class="redprice"><%="$"+stockdata.latest_price.to_s+"("+pctchange.to_s+"%)"%></h2>
 <%end%>
 
 <table class="table table-striped table-hover table-condensed table-bordered">
@@ -23,16 +25,17 @@
             <td> <%= stockdata.latest_price %> </td>
             <td> <%= stockdata.previous_close %> </td>
             <% if stockdata.latest_price-stockdata.previous_close>0 %>
-                <td class="green"><%="+"+(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td> 
+                <td class="green"><%="+"+pctchange.to_s+"%"%></td> 
             <%else%>
-                <td class="red"><%=(100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2).to_s+"%"%></td>
+                <td class="red"><%=pctchange.to_s+"%"%></td>
             <%end%>
             <td class="green"><%="$"+stockdata.week52_high.to_s%></td> 
             <td class="red"><%="$"+stockdata.week52_low.to_s%></td> 
-
         </tr>
     </tbody>
 </table>
+
+<h3><%= "Trading Exchange: "+stockdata.primary_exchange%></h3>
 
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
 <%= link_to 'Back', stocks_path %>
