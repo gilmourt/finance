@@ -1,7 +1,11 @@
 <% provide(:title, "Portfolio") %>
-<p id="notice"><%= notice %></p>
+
+
 <h1>Your Portfolio</h1>
-<%@stocks.sort_by {|stock| :ticker}%>
-<%=render partial: "stocktable", locals: {stocks: @stocks} %>
-<%= button_to "Refresh Portfolio", stocks_path, :method => :get%>
-    
+
+<div class="center jumbotron">
+    <p id="notice"><%= notice %></p>
+    <%@stocks.sort_by {|stock| :ticker}%>
+    <%=render partial: "stocktable", locals: {stocks: @stocks} %>
+    <%= button_to "Refresh Portfolio", stocks_path, :method => :get%>
+</div>

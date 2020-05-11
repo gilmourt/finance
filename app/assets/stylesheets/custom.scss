@@ -5,51 +5,62 @@
 
 body {
     padding-top: 60px;
-    background-color: rgb(29, 144, 216);
+}
+  .centerclass {
+    text-align: center;
   }
-  center image{
-      text-align: center;
+  .leftclass {
+    text-align: left;
+  }
+  .rightclass {
+    text-align: right;
+  }
+  .maintitle {
+    font-size: 9em;
+  }
+  .boldtext {
+    font-size: 1.2em;
   }
 
-  
+
   section {
     overflow: auto;
   }
-  
+
   textarea {
     resize: vertical;
   }
-  
+
   .center {
     text-align: center;
   }
-  
+
   .center h1 {
     margin-bottom: 10px;
   }
 
   /* typography */
 
-h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     line-height: 1;
   }
-  
+
   h1 {
     font-size: 3em;
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
   }
-  
+
   h2 {
-    font-size: 1.2em;
+    font-size: 2em;
     letter-spacing: -1px;
     margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
     color: #777;
   }
-  
+
   p {
     font-size: 1.1em;
     line-height: 1.7em;
@@ -59,36 +70,47 @@ h1, h2, h3, h4, h5, h6 {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: blue($color: #000000);
+    color: rgb(88, 149, 177);
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
     font-weight: bold;
   }
-  
+
   #logo:hover {
     color: lightblue;
     text-decoration: none;
   }
 
+  .price {
+    color: black;
+    font-size: 8em;
+    margin-bottom: 1px;
+  }
+
   .green {
     color: green;
   }
-  .greenprice {
-    color: green;
-    font-size: 4em;
+
+
+  .greenpct {
+    color: rgb(44, 253, 44);
+    font-size: 3em;
+    margin-top: 1px;
   }
 
   .red {
     color: red;
   }
-  .redprice {
-    color: red;
-    font-size: 4em;
+
+
+  .redpct {
+    color: rgb(156, 10, 10);
+    font-size: 3em;
   }
 
   .compname {
-   font-size: 5em;
-   margin-bottom: 30px;
-   text-align: center;
+    font-size: 5em;
+    margin-bottom: 30px;
+    text-align: center;
   }
