@@ -13,7 +13,7 @@
 <div class="center jumbotron">
     <p id="notice"><%= notice %></p>
     <h1 class="compname"> <%= stockdata.company_name %> </h1>
-    <h2 class="center"> <%= "Trading Exchange: "+stockdata.primary_exchange%> </h2>
+    <h2 class="center"> <%= "Trading Exchange: "+stockdata.primary_exchange%> </h2>    
     <table class="table table-striped table-hover table-condensed table-bordered">
         <thead>
             <tr>
@@ -39,6 +39,14 @@
         </tbody>
     </table>
 
+    <% if change>0 %>
+        <%= image_tag  "stonks.png", alt: "stonks going up" %>
+    <%else%>
+        <%= image_tag  "notstonks.png", alt: "not stonks pointing down" %>
+    <%end%>
+    <p></p>
     <%= link_to 'Back', stocks_path %>
+
+     
 </div>
 
