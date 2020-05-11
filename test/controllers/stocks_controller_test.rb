@@ -15,7 +15,7 @@ describe StocksController do
 
   it "creates stock" do
     expect {
-      post stocks_url, params: { stock: {  } }
+      post stocks_url, params: { stock: { } }
     }.must_change "Stock.count"
 
     must_redirect_to stock_path(Stock.last)
@@ -42,5 +42,5 @@ describe StocksController do
     }.must_change "Stock.count", -1
 
     must_redirect_to stocks_path
-  end
+  end 
 end

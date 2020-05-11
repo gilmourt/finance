@@ -17,6 +17,7 @@ gem 'stock_quote'
 #gem for testing website interaction
 gem 'selenium'
 gem 'minitest-rails-capybara'
+gem 'rspec'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
