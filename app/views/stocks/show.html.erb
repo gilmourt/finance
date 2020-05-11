@@ -1,4 +1,4 @@
-
+<% provide(:title, @stock.ticker) %>
 <% stockdata = StockQuote::Stock.quote(@stock.ticker)%>
 <% change = (stockdata.latest_price-stockdata.previous_close).round(2)%>
 <% pctchange = (100*(stockdata.latest_price-stockdata.previous_close)/stockdata.previous_close).round(2)%>
