@@ -5,7 +5,7 @@ class Stock < ApplicationRecord
         begin 
             StockQuote::Stock.quote(self.ticker).is_a?(Object)
         rescue Exception => e
-            errors.add(:ticker, "Must be a valid stock ticker")
+            errors.add(:ticker, "must be a valid stock ticker")
         end
     end
 end
